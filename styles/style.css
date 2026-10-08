@@ -33,6 +33,12 @@ body{
 
 .reviews-stars{
     width: 50%;
+    background-color: rgb(230, 125, 143);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap: 20px;
 }
 
 .reviews-text header{
@@ -49,4 +55,18 @@ body{
 .reviews-text header p{
     color: var(--medium-magenta);
     font-size: 15px;
+}
+
+.reviews-valorations{
+    background-color: rgb(73, 169, 60);
+    display:flex;
+    width: 70%;
+    gap: 10px;
+}
+
+.card1{
+    align-self:start;
+}
+.card3{
+    align-self:end;
 }
