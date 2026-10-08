@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "league spartan", sans-serif;
     box-sizing:border-box;
+    font-weight: 400, 500, 700;
 }
 :root {
     --dark-magenta: hsl(300, 43%, 22%);
