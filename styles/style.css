@@ -1,72 +1,169 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "league spartan", sans-serif;
-    box-sizing:border-box;
-    font-weight: 400, 500, 700;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --dark-magenta: hsl(300, 43%, 22%);
-    --pink: hsl(333, 80%, 67%);
-    --medium-magenta: hsl(303, 10%, 53%);
-    --light-magenta: hsl(300, 24%, 96%);
-    --white: hsl(0, 0%, 100%);
+  --dark-magenta: hsl(300, 43%, 22%);
+  --pink: hsl(333, 80%, 67%);
+  --medium-magenta: hsl(303, 10%, 53%);
+  --light-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
 }
 
-#reviews-home{
-
-    width:80%;
-    padding: 20px;
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px;
 }
 
-body{
-    display:flex;
-    height:100vh;
-    justify-content:center;
+.container {
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
-.reviews-text{
-    display:flex;
-    gap: 80px;
+/* ---------- Parte superior ---------- */
+.reviews-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
 }
 
-.reviews-stars{
-    width: 50%;
-    background-color: rgb(230, 125, 143);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    gap: 20px;
+.reviews-text header {
+  flex: 1 1 0;
+  max-width: 410px;
 }
 
-.reviews-text header{
-    width:65%;
-    padding: 10px;
+.reviews-text header h2 {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--dark-magenta);
+  margin-bottom: 24px;
 }
 
-.reviews-text header h2{
-    font-size: 45px;
-    color: var(--dark-magenta);
-    margin-bottom: 20px;
+.reviews-text header p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--medium-magenta);
 }
 
-.reviews-text header p{
-    color: var(--medium-magenta);
-    font-size: 15px;
+.reviews-stars {
+  flex: 1 1 0;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.reviews-valorations{
-    background-color: rgb(73, 169, 60);
-    display:flex;
-    width: 70%;
-    gap: 10px;
+.reviews-valorations {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: calc(100% - 96px);
+  padding: 14px 32px;
+  background-color: var(--light-magenta);
+  color: var(--dark-magenta);
+  border-radius: 6px;
 }
 
-.card1{
-    align-self:start;
+.card2 { margin-left: 48px; }
+.card3 { margin-left: 96px; }
+
+.stars {
+  display: flex;
+  gap: 8px;
 }
-.card3{
-    align-self:end;
+
+.stars img {
+  width: 17px;
+  height: auto;
+}
+
+.reviews-valorations h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ---------- Review cards ---------- */
+.reviews-cards {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 32px; /* espacio para el desfase de la última card */
+}
+
+.review-card {
+  flex: 1;
+  padding: 32px;
+  background-color: var(--dark-magenta);
+  color: var(--white);
+  border-radius: 8px;
+}
+
+.review-card:nth-child(2) { transform: translateY(16px); }
+.review-card:nth-child(3) { transform: translateY(32px); }
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.review-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.review-author h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.review-author strong {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--pink);
+}
+
+.review-card blockquote {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .reviews-text,
+  .reviews-cards {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reviews-text { gap: 40px; }
+  .reviews-stars { width: 100%; }
+
+  .reviews-valorations,
+  .card2,
+  .card3 {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .review-card:nth-child(2),
+  .review-card:nth-child(3) { transform: none; }
+
+  .review-author { justify-content: center; }
 }
